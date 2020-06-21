@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.btn {
+    font-size: 15px;
+    margin: 3px;
+    height: 35px;
+    border-radius: 10px;
+}
+input{
+   font-size: 60px;
+}
+.jumbotron{
+    background-color: white;
+}

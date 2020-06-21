@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user-class/user';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  user:User;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    interface ApiResponse{
+      userName:string;
+      name:string;
+    }
   }
 
 }
