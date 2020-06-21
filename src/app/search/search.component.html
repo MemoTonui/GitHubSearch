@@ -9,23 +9,30 @@
     
       </div>
       <div class="container">
-        <form class="form-inline">
-            <input style="margin-left: 60px; height: 40px;border-radius: 10px;font-size: 12px;" type="text" class="form-control" id="search" size="121" aria-describedby="search" placeholder="Enter a GitHub User name">
-            <a href="#" class="btn btn-info btn-sm">
+        <form class="form-inline" #search='ngForm'>
+            <input [(ngModel)]="userName" name="userName" [ngModelOptions]="{standalone: true}"  style="margin-left: 60px; height: 40px;border-radius: 10px;font-size: 12px;" type="text" class="form-control" id="search" size="121"  placeholder="Enter a GitHub User name">
+            <a  type="submit" href="#" class="btn btn-info btn-sm" >
                 <span class="glyphicon glyphicon-search"></span> Search 
               </a> 
         
         </form>
+        
+       <div class="row">
+        <div class="col-sm-4 card" style="width:20rem;">
+            <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+            
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">User Name : {{user.login}} </li>
+              <li class="list-group-item">Name : {{user.name}}</li>
+              <li class="list-group-item" *NgIf ='location'>Location:{{user.location}}</li>
 
-        <div class="row">
-            <div class="col-md-4">
-
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-outline-primary" style="margin-right: 50px;">Followers: {{user.followers}} </button>
+              <button class="btn btn-outline-info">Following: {{user.following}} </button>
+            </div> 
             </div>
-            <div class="col-md-8">
-
-            </div>
-
-        </div>
+          </div>
       </div>
     
 
