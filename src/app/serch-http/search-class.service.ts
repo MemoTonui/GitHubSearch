@@ -23,13 +23,13 @@ userNameRequest(){
       this.user.userName = response.userName
       this.user.name = response.name
 
-      resolve()
+      resolve();
     },
     error=>{
      this.user.userName="MemoTonui";
      this.user.name="MemoTonui";
 
-      reject(error)
+      reject(error);
     })
   })
   return promise
