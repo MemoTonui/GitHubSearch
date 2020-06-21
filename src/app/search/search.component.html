@@ -18,7 +18,7 @@
         </form>
         
        <div class="row">
-        <div class="col-sm-3 card" style="width:20rem;" >
+        <div class="col-md-3 card" style="width:20rem;" >
             <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
             
             <ul class="list-group list-group-flush">
@@ -32,21 +32,34 @@
               <button class="btn btn-outline-info">Following: {{user.following}} </button>
             </div> 
             </div>
-          </div>
-          <div class="col-sm-9">
+         
+          <div class="col-md-7">
+            <div class="panel panel-info">
+                <div class="panel-heading">Repositories</div>
+                <div class="panel-body">
+                    
+                
              
-                 <p>
-                     Email Address:{{repos.email}} <hr>
-                 </p>
-                 <p>
-                     Bio : {{repos.bio}}
-                 </p>
-                  <button btn btn-ouline-success><a href="{{repos.html_url}}">View profile from GitHub</a>></button>
-              
+                
+                    <p *ngIf ="repos.email"> Email Address:{{repos.email}} </p>
+
+                     <p><li *ngIf ="repos.bio" class="list-group-item list-group-item-info"> Bio : {{repos.bio}}</li></p>
+                
+                    
+
+                    <p *ngIf="repos.public_repos"> Public repositories: {{repos.public_repos}}</p>
+
+                    <p *ngIf="repos.public_gists"> Public Gists:  {{repos.public_gists}}</p>
+
+                    <p *ngIf="repos.created_at"> Date Account was created: {{repos.created_at|date}}</p>
+                
+                  <button class="btn btn-warning pull-right"><a href="{{repos.html_url}}"> View profile from GitHub</a></button>
+                </div>
+            </div>
 
           </div>
       </div>
-    
+    </div>
 
 
 </div>

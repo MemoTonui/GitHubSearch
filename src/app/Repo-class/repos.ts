@@ -6,5 +6,6 @@ export class Repos {
         public bio:string,
         public html_url:any,
         public created_at:any
-        ){}
+        )
+        {}
 }

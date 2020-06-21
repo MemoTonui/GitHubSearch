@@ -14,5 +14,14 @@ input{
 }
 .card{
     margin-top: 30px;
+    margin-bottom: 50px;
+    float: left;
+    margin-left: 100px;
    
+}
+a{
+    color: white
+}
+.panel{
+    margin-top: 30px;
 }
