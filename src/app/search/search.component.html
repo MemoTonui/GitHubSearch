@@ -10,8 +10,9 @@
       </div>
       <div class="container">
         <form class="form-inline" #search='ngForm'>
-            <input [(ngModel)]="userName" name="userName" [ngModelOptions]="{standalone: true}"  style="margin-left: 60px; height: 40px;border-radius: 10px;font-size: 12px;" type="text" class="form-control" id="search" size="121"  placeholder="Enter a GitHub User name">
-            <a  type="submit" href="#" class="btn btn-info btn-sm" >
+            <input [(ngModel)]="login" name="login" [ngModelOptions]="{standalone: true}" (keyup.enter)="findUserName()" style="margin-left: 60px; height: 40px;border-radius: 10px;font-size: 12px;" type="text" class="form-control" id="search" size="121"  placeholder="Enter a GitHub User name">
+            Display : {{login}}
+            <a  type="submit" (click)="findUserName()" href="#" class="btn btn-info btn-sm" >
                 <span class="glyphicon glyphicon-search"></span> Search 
               </a> 
         
@@ -28,7 +29,7 @@
 
             </ul>
             <div class="card-body">
-              <button class="btn btn-outline-primary" style="margin-right: 50px;">Followers: {{user.followers}} </button>
+              <button class="btn btn-outline-primary" style="margin-right: 10px;">Followers: {{user.followers}} </button>
               <button class="btn btn-outline-info">Following: {{user.following}} </button>
             </div> 
             </div>
@@ -36,15 +37,9 @@
           <div class="col-md-7">
             <div class="panel panel-info">
                 <div class="panel-heading">Repositories</div>
-                <div class="panel-body">
-                    
-                
-             
-                
+                <div class="panel-body">             
                     <p *ngIf ="repos.email"> Email Address:{{repos.email}} </p>
-
-                     <p><li *ngIf ="repos.bio" class="list-group-item list-group-item-info"> Bio : {{repos.bio}}</li></p>
-                
+                     <p><li *ngIf ="repos.bio" class="list-group-item list-group-item-info"> Bio : {{repos.bio}}</li></p>             
                     
 
                     <p *ngIf="repos.public_repos"> Public repositories: {{repos.public_repos}}</p>
@@ -54,6 +49,8 @@
                     <p *ngIf="repos.created_at"> Date Account was created: {{repos.created_at|date}}</p>
                 
                   <button class="btn btn-warning pull-right"><a href="{{repos.html_url}}"> View profile from GitHub</a></button>
+
+                  
                 </div>
             </div>
 

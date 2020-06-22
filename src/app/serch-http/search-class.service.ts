@@ -11,24 +11,27 @@ export class SearchClassService {
 
   user:User;
   repos:Repos;
-  userName: string;
+  
+  login:string
+ 
   constructor(private http:HttpClient) { 
     this.user= new User('','','','',0,0);
-    this.repos= new Repos('',0,0,'','','');
+    this.repos= new Repos('',0,0,'','','','');
+    
   }
-  login = 'MemoTonui'
+  
 
-  accessToken:"7d0ccdd8c2ed455f61f8c4684926f0c5ca078c76";
+  
 
 
   
  
-  updateUserName (userName:string){
-    this.userName = userName;
-  }
+ 
   
-userNameRequest(){
+userNameRequest(login:string){
+  this.login =login;
   interface ApiResponse{
+    repos_url: any;
     login:string;
     name:string;
     location:string;
@@ -43,7 +46,7 @@ userNameRequest(){
     created_at:any;
   }
   let promise = new Promise((resolve,reject)=>{
-    this.http.get<ApiResponse>(environment.apiUrl+this.login).toPromise().then(response=>{
+    this.http.get<ApiResponse>(environment.apiUrl+this.login+"?access_token="+environment.accessToken).toPromise().then(response=>{
       console.log(response)
       this.user.login = response.login
       this.user.name = response.name
@@ -57,6 +60,8 @@ userNameRequest(){
       this.repos.bio = response.bio
       this.repos.html_url = response.html_url
       this.repos.created_at = response.created_at
+      this.repos.repos_url=response.repos_url
+      
 
 
       resolve();

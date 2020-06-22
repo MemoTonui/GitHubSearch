@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   user:User;
   repos:Repos;
-  userName: string;
+  login: string;
 
   
 
@@ -23,11 +23,12 @@ export class SearchComponent implements OnInit {
      
    }
    findUserName(){
-     this.searchClassService.updateUserName(this.userName)
+     this.searchClassService.userNameRequest(this.login);
+     return false;
    }
 
   ngOnInit(): void {
-    this.searchClassService.userNameRequest();
+    this.searchClassService.userNameRequest(this.login);
     this.user=this.searchClassService.user;
     this.repos=this.searchClassService.repos
    
