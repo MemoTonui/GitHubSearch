@@ -1,6 +1,32 @@
+
 # GitHubSearch
+This is an application that allows a user to enter a github user name and view the details of the repository.It integrates GitHub Api.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+
+
+## Author's Name
+Linda Tonui
+
+## Technologies Used
+- HTML
+- CSS
+- Terminal
+- Git
+- Vs Code
+- Angular
+
+## Bugs And Errors
+- No known Bugs
+
+## Setup Instructions
+- Clone or download and unzip the repository from github, `https://github.com/memotonui/GitHubSearch/`.
+- git clone  `https://github.com/memotonui/GitHubSearch/` to get the project on your PC.
+- Run ng serve from your terminal
+
+# Link to live site on Git Hub Pages
+`https://memotonui.github.io/GitHubSearch/`
+
 
 ## Development server
 
