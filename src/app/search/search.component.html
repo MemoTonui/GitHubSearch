@@ -42,6 +42,7 @@
                   <button class="btn btn-warning pull-right"><a href="{{repos.html_url}}"> View profile from GitHub</a></button>
                       <div *ngFor="let repo of repo_url">
                         {{repos.repo.name}}
+                        {{repo.html_url}}
 
                       </div>
                   
