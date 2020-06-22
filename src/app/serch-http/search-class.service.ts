@@ -20,14 +20,6 @@ export class SearchClassService {
     
   }
   
-
-  
-
-
-  
- 
- 
-  
 userNameRequest(login:string){
   this.login =login;
   interface ApiResponse{
