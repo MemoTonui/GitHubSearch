@@ -49,7 +49,10 @@
                     <p *ngIf="repos.created_at"> Date Account was created: {{repos.created_at|date}}</p>
                 
                   <button class="btn btn-warning pull-right"><a href="{{repos.html_url}}"> View profile from GitHub</a></button>
+                      <div *ngFor="let repo of repo_url">
+                        {{repo.name}}
 
+                      </div>
                   
                 </div>
             </div>

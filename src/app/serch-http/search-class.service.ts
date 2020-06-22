@@ -31,7 +31,8 @@ export class SearchClassService {
 userNameRequest(login:string){
   this.login =login;
   interface ApiResponse{
-    repos_url: any;
+    repos_url;
+
     login:string;
     name:string;
     location:string;
