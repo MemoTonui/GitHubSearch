@@ -12,7 +12,7 @@ export class SearchClassService {
   user:User;
   repos:Repos;
   
-  login:string
+  login ="MemoTonui";
  
   constructor(private http:HttpClient) { 
     this.user= new User('','','','',0,0);
