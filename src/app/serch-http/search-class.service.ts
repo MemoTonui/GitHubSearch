@@ -11,9 +11,7 @@ export class SearchClassService {
 
   user:User;
   repos:Repos;
-  
-  login ="MemoTonui";
- 
+  login: string; 
   constructor(private http:HttpClient) { 
     this.user= new User('','','','',0,0);
     this.repos= new Repos('',0,0,'','','','');
